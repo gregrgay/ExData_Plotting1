@@ -2,7 +2,7 @@
 # Greg R Gay
 
 library(datasets)
-par(mfrow = c(2,2))
+
 # read in the full data set if it has not already 
 if(!exists("consumption")){
     consumption <- read.table("household_power_consumption.txt", 
@@ -27,10 +27,13 @@ if(!exists("c2007")){
 # data to file tosee what it looks like
 #write.table(c2007, "c2007.csv", sep=",")
 
-# The first graph 
+# Setup a 2x2 grid
+par(mfrow = c(2,2))
+
+# Add existing first graph 
 source("./plot2.R")
 
-# The second graph
+# Create second graph
 plot(as.numeric(c2007$Voltage),
      type = "l",
      ylab="Voltage",
@@ -41,10 +44,10 @@ plot(as.numeric(c2007$Voltage),
 lines(c2007$Voltage, lty=1, type="l", col="black" )
 axis(1,at=c(0,1500,2900),labels=c("thur","fri","sat"))
 
-# The third graph
+# Add existing third graph
 source("./plot3.R")
 
-# The fourth graph
+# Create fourth graph
 plot(as.numeric(c2007$Global_reactive_power),
      type = "l",
      ylab="Global_reactive_power",

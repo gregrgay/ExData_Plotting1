@@ -35,5 +35,6 @@ plot(as.double(c2007$Global_active_power),
                 xaxt = 'n'
                  )
 axis(1,at=c(0,1500,2900),labels=c("thur","fri","sat"))
-dev.copy(png, file = "plot2.png")  ## Copy the plot to a PNG file
-dev.off()
+
+#dev.copy(png, file = "plot2.png")  ## Copy the plot to a PNG file
+#dev.off()
